@@ -7,15 +7,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import in.aviaryan.JokeManager;
+
 
 public class MainActivity extends AppCompatActivity {
+
+    private JokeManager jokeMgr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // init joke manager
+        jokeMgr = new JokeManager("free");
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -40,8 +45,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
-        Toast.makeText(this, "derp", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, jokeMgr.getRandomJoke(), Toast.LENGTH_SHORT).show();
     }
-
 
 }
