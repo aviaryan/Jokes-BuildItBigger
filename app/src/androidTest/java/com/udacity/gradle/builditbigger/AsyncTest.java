@@ -21,14 +21,6 @@ public class AsyncTest {
     private static String LOG_TAG = "Test";
 
     @Test
-    public void useAppContext() throws Exception {
-        // Context of the app under test.
-        Context appContext = InstrumentationRegistry.getTargetContext();
-
-        assertEquals("com.udacity.gradle.builditbigger", appContext.getPackageName());
-    }
-
-    @Test
     public void testAsync() {
         EndpointsAsyncTask endpointsAsyncTask = new EndpointsAsyncTask();
         endpointsAsyncTask.execute(InstrumentationRegistry.getTargetContext(), null);
