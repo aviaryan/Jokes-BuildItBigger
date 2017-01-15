@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
  */
 
 @RunWith(AndroidJUnit4.class)
-public class AsyncUnitTest {
+public class AsyncTest {
     private static String LOG_TAG = "Test";
 
     @Test
