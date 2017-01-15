@@ -8,20 +8,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import in.aviaryan.JokeManager;
 import in.aviaryan.jokedisplaylib.JokeActivity;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    private JokeManager jokeMgr;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // init joke manager
-        jokeMgr = new JokeManager();
     }
 
     @Override

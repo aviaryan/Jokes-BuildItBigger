@@ -18,6 +18,7 @@ import in.aviaryan.builditbigger.backend.myApi.MyApi;
 class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
     private static MyApi myApiService = null;
     private Context context;
+    private Boolean is_test = false;
 
     @Override
     protected String doInBackground(Context... params) {
@@ -42,16 +43,20 @@ class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
 
         context = params[0];
         String name = "none";
+        if (params.length > 1)
+            is_test = true;
 
         try {
             return myApiService.sayHi(name).execute().getData();
         } catch (IOException e) {
-            return e.getMessage();
+            return "ERROR:" + e.getMessage();
         }
     }
 
     @Override
     protected void onPostExecute(String result) {
-        MainActivity.startJokeActivity(context, result);
+        if (!is_test){
+            MainActivity.startJokeActivity(context, result);
+        }
     }
 }
