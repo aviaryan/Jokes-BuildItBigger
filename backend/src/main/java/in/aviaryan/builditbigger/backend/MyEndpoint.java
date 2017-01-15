@@ -12,6 +12,8 @@ import com.google.api.server.spi.config.ApiNamespace;
 
 import javax.inject.Named;
 
+import in.aviaryan.JokeManager;
+
 /**
  * An endpoint class we are exposing
  */
@@ -24,6 +26,7 @@ import javax.inject.Named;
                 packagePath = ""
         )
 )
+
 public class MyEndpoint {
 
     /**
@@ -32,7 +35,9 @@ public class MyEndpoint {
     @ApiMethod(name = "sayHi")
     public MyBean sayHi(@Named("name") String name) {
         MyBean response = new MyBean();
-        response.setData("Hi, " + name);
+
+        JokeManager jokeMgr = new JokeManager();
+        response.setData(jokeMgr.getRandomJoke());
 
         return response;
     }

@@ -22,7 +22,7 @@ public class JokeManager {
 
     private Random random;
 
-    public JokeManager(String variant){
+    public JokeManager(){
         // may do something here
         random = new Random();
     }

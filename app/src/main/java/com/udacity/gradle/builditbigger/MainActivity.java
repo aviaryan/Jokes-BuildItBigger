@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // init joke manager
-        jokeMgr = new JokeManager("free");
+        jokeMgr = new JokeManager();
     }
 
     @Override
